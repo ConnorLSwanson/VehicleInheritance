@@ -5,71 +5,24 @@ using namespace std;
 
 class Vehicle
 {
-public:
-
+protected: 
     int avgSpeed = 0;
     int mileage = 0;
-    bool engineRunning = false;
+
+public:
+
+    bool engineRunning = true;
     string terrain = " ";
-    bool canDrive;
 
     virtual void Drive() = 0;
 
-    void StartEngine()
+    int GetMileage()
     {
-        engineRunning = true;
-    }
-
-    void StopEngine()
-    {
-        engineRunning = false;
-    }
-
-    void CheckTerrain()
-    {
-        if (terrain == " ")
-        {
-            cout << "You need to choose where you are going to drive!" << endl;
-            ChangeTerrain();
-        }
-        else
-        {
-            cout << "You are driving on the " << terrain << "!  Wow!" << endl;
-        }
-    }
-
-
-    void ChangeTerrain()
-    {
-        cout << "Where are you going to take your vehicle?  (Select a number)" << endl;
-        cout << "1. Roads." << endl;
-        cout << "2. Water." << endl;
-        cout << "3. Air" << endl;
-        int selection = 0;
-        cin >> selection;
-
-        switch (selection)
-        {
-        case 1:
-            terrain = "road";
-            break;
-
-        case 2: 
-            terrain = "water";
-            break;
-
-        case 3: 
-            terrain = "air";
-            break;
-
-        default:
-            system("cls");
-            cout << "Please select a valid input." << endl;
-        }
+        return mileage;
     }
 };
 
-class Car : Vehicle
+class Car : public Vehicle
 {
 public:
     Car(int numMiles)
@@ -93,7 +46,7 @@ public:
 };
 
 
-class Boat : Vehicle
+class Boat : public Vehicle
 {
 public:
     Boat(int numMiles)
@@ -117,7 +70,7 @@ public:
 };
 
 
-class Plane : Vehicle
+class Plane : public Vehicle
 {
 public:
     Plane(int numMiles)
