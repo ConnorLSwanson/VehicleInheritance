@@ -3,15 +3,10 @@
 // Activision Blizzard
 // 7/21/2022
 
-#include <iostream>
-#include <string>
 #include <time.h>
-#include "Vehicle.h"
 #include "Car.h"
 #include "Boat.h"
 #include "Plane.h"
-
-using namespace std;
 
 string PickVehicle();
 void PrintMileage(string vhcl, Car* pCar, Boat* pBoat, Plane* pPlane);

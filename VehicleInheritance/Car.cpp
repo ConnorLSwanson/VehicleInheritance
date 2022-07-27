@@ -1,5 +1,4 @@
 #include "Car.h"
-#include <iostream>
 
 Car::Car(int numMiles)
 {

@@ -1,5 +1,4 @@
 #include "Boat.h"
-#include <iostream>
 
 Boat::Boat(int numMiles)
 {
