@@ -6,7 +6,10 @@
 #include <iostream>
 #include <string>
 #include <time.h>
-#include "Vehicles.h"
+#include "Vehicle.h"
+#include "Car.h"
+#include "Boat.h"
+#include "Plane.h"
 
 using namespace std;
 
@@ -81,6 +84,8 @@ string PickVehicle()
         cout << "Please select a valid response." << endl;
         break;
     }
+
+    return " ";
 }
 
 
@@ -250,4 +255,5 @@ bool KeepPlaying()
             break;
         }
     } while (validResponse);
+    return false;
 }
